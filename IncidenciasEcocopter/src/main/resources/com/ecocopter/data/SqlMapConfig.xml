@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration 
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <properties resource="com/ecocopter/data/configuration.properties"/>
+    
+    <typeAliases>
+        <typeAlias alias="CabIncidencia" type="com.ecocopter.model.CabeceraIncidencia"/>
+        <typeAlias alias="DetIncidencia" type="com.ecocopter.model.DetalleIncidencia"/>
+        
+    </typeAliases>
+    
+    <environments default="jmad">
+        <environment id="jmad">
+            <transactionManager type="JDBC"/>
+                <dataSource type="POOLED">
+                    <property name="driver" value="${driver}"/>
+                    <property name="url" value="${url}"/>
+                    <property name="username" value="${username}"/>
+                    <property name="password" value="${password}"/>
+                </dataSource>
+        </environment>
+    </environments>
+    
+    <mappers>
+        
+        <mapper resource="com/ecocopter/data/IncidenciasMapper.xml"/>
+    </mappers>
+    
+   
+</configuration>
